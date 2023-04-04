@@ -1,0 +1,13 @@
+Vote du joueur {{ joueur.nom }}
+<table>
+<tr>
+<th>Date Vote</th>
+<th>Note Vote</th>
+</tr>
+{% for c in votes %} 
+<tr>
+<td> {{c.date}}</td>
+<td> {{c.notevote}}</td>
+</tr>
+{% endfor %}
+</table>

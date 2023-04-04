@@ -1,0 +1,29 @@
+<h1>Liste des joueurs</h1>
+    <table border="2">
+        <tr>
+            <th>ID</th>
+            <th>Nom</th>
+            <th>Equipe</th>
+            <th>Actions</th>
+        </tr>
+        {% for c in joueurs %}
+        <tr>
+            <td>{{ c.id }}</td>
+            <td> {{ c.nom | upper }}</td>
+            <td> {{ c.equipe }}</td>
+            <td><a href="{{path('details_joueur',{'id':c.id})}}">Détails Vote</a></td>
+        </tr>
+        {% endfor%}
+    </table>
+<h1>Liste des joueurs</h1>
+{{ form_start(form) }}
+    {{ form_label(form.joueurs) }}
+    {{ form_widget(form.joueurs) }}
+    {{ form_label(form.notevote) }}
+    
+    {{ form_widget(form.notevote) }}
+    
+    {{ form_widget(form.date, {'attr': {'style': 'display:none;'}}) }}
+    {{ form_rest(form) }}
+    <button type="submit">Vote</button>
+    {{ form_end(form) }}
